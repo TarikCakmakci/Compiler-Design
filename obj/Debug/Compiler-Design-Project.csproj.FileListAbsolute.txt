@@ -1,0 +1,10 @@
+C:\Users\Onur\OneDrive\Belgeler\GitHub\Compiler-Design\bin\Debug\Compiler-Design-Project.exe.config
+C:\Users\Onur\OneDrive\Belgeler\GitHub\Compiler-Design\bin\Debug\Compiler-Design-Project.exe
+C:\Users\Onur\OneDrive\Belgeler\GitHub\Compiler-Design\bin\Debug\Compiler-Design-Project.pdb
+C:\Users\Onur\OneDrive\Belgeler\GitHub\Compiler-Design\obj\Debug\Compiler-Design-Project.csproj.AssemblyReference.cache
+C:\Users\Onur\OneDrive\Belgeler\GitHub\Compiler-Design\obj\Debug\Compiler_Design_Project.Form1.resources
+C:\Users\Onur\OneDrive\Belgeler\GitHub\Compiler-Design\obj\Debug\Compiler_Design_Project.Properties.Resources.resources
+C:\Users\Onur\OneDrive\Belgeler\GitHub\Compiler-Design\obj\Debug\Compiler-Design-Project.csproj.GenerateResource.cache
+C:\Users\Onur\OneDrive\Belgeler\GitHub\Compiler-Design\obj\Debug\Compiler-Design-Project.csproj.CoreCompileInputs.cache
+C:\Users\Onur\OneDrive\Belgeler\GitHub\Compiler-Design\obj\Debug\Compiler-Design-Project.exe
+C:\Users\Onur\OneDrive\Belgeler\GitHub\Compiler-Design\obj\Debug\Compiler-Design-Project.pdb
