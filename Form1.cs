@@ -16,5 +16,12 @@ namespace Compiler_Design_Project
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int derleyici;
+
+            derleyici = 10;
+        }
     }
 }
