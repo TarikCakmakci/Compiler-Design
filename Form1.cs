@@ -49,19 +49,39 @@ namespace Compiler_Design_Project
 
         private void Dosya_Oku(object sender, EventArgs e)
         {
-            using (StreamReader file = new StreamReader(fileName1))
+             int counter = 1;
+            string s = File.ReadAllText(fileName1);
+            string[] words = s.Split(' ',';');
+            foreach (string word in words)
             {
-
-                string ln;
-                while ((ln = file.ReadLine()) != null)
-                {
-
-                    listBox1.Items.Add(ln);
-
-                }
-                file.Close();
-
+                
+                // show the resulting string in textbox2
+                listBox1.Items.Add(counter+ ". kelime : "+word);
+                counter += 1;
             }
+            for (int i = 0; i < words.Length; i++)
+            {
+                if (words[i] == "int" && words[i+1] == "x")
+                {
+                    listBox1.Items.Add(i+". satırda bulundu int bulundu ve intten sonraki değişken x olarak atandı");
+                    listBox1.Items.Add(words[i]);
+                    listBox1.Items.Add(words[i + 1]);
+                    
+                }
+            }
+           // using (StreamReader file = new StreamReader(fileName1))
+           // {
+           //
+           //     string ln;
+           //     while ((ln = file.ReadLine()) != null)
+           //     {
+           //
+           //         listBox1.Items.Add(ln);
+           //
+           //     }
+           //     file.Close();
+           //
+           // }
         }
     }
 }
