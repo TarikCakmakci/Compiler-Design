@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.IO;
+using System.IO.MemoryMappedFiles;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -46,10 +47,14 @@ namespace Compiler_Design_Project
         {
 
         }
-
-        private void Dosya_Oku(object sender, EventArgs e)
+      
+       private void Dosya_Oku(object sender, EventArgs e)
         {
+<<<<<<< Updated upstream
              int counter = 1;
+=======
+            int counter = 1;
+>>>>>>> Stashed changes
             string s = File.ReadAllText(fileName1);
             string[] words = s.Split(' ',';');
             foreach (string word in words)
@@ -69,6 +74,7 @@ namespace Compiler_Design_Project
                     
                 }
             }
+<<<<<<< Updated upstream
            // using (StreamReader file = new StreamReader(fileName1))
            // {
            //
@@ -82,6 +88,25 @@ namespace Compiler_Design_Project
            //     file.Close();
            //
            // }
+=======
+            //using (StreamReader file = new StreamReader(fileName1))
+            //{
+            //    string[] words = file.ReadToEnd().Split(' ');
+            //    string ln;
+            //    while ((ln = file.ReadLine()) != null)
+            //    {
+            //        if (ln.ToString() == "int")
+            //        {
+            //            listBox1.Items.Add("int bulundu");
+            //        }
+            //        listBox1.Items.Add(ln.Trim());
+
+            //    }
+            //    file.Close();
+
+
+            //}
+>>>>>>> Stashed changes
         }
     }
 }
