@@ -7,6 +7,7 @@ using System.IO;
 using System.IO.MemoryMappedFiles;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -50,13 +51,12 @@ namespace Compiler_Design_Project
       
        private void Dosya_Oku(object sender, EventArgs e)
         {
-<<<<<<< Updated upstream
-             int counter = 1;
-=======
-            int counter = 1;
->>>>>>> Stashed changes
+
+            int counter = 0;
             string s = File.ReadAllText(fileName1);
-            string[] words = s.Split(' ',';');
+            string[] words = s.Split(' ','\n');
+            string[] degiskenTipleri = { "int", "double", "boolean" };
+            string[] operatorler = { "=", "(", ")" ,"+","-","*"};
             foreach (string word in words)
             {
                 
@@ -64,31 +64,50 @@ namespace Compiler_Design_Project
                 listBox1.Items.Add(counter+ ". kelime : "+word);
                 counter += 1;
             }
+            var regex = new Regex("[0-9]");
             for (int i = 0; i < words.Length; i++)
             {
-                if (words[i] == "int" && words[i+1] == "x")
+                for (int k = 0; k < degiskenTipleri.Length; k++)
                 {
-                    listBox1.Items.Add(i+". satırda bulundu int bulundu ve intten sonraki değişken x olarak atandı");
-                    listBox1.Items.Add(words[i]);
-                    listBox1.Items.Add(words[i + 1]);
-                    
+                    if (words[i]==degiskenTipleri[k])
+                    {
+                        listBox1.Items.Add(i + ". satırda " + degiskenTipleri[k] + " bulundu.");
+                        if (regex.IsMatch(words[i+1].Substring(0,1))==true)
+                        {
+                            listBox1.Items.Add((i + 1) + ".kelime sayı ile başlayamaz");
+
+                        }
+                       
+                    }
+                   
                 }
+                for (int z = 0; z < operatorler.Length; z++)
+                {
+                    if (words[i]==operatorler[z])
+                    {
+                        listBox1.Items.Add(i + ". satırda " + operatorler[z] + " bulundu.");
+                    }
+                  
+                }
+
             }
-<<<<<<< Updated upstream
-           // using (StreamReader file = new StreamReader(fileName1))
-           // {
-           //
-           //     string ln;
-           //     while ((ln = file.ReadLine()) != null)
-           //     {
-           //
-           //         listBox1.Items.Add(ln);
-           //
-           //     }
-           //     file.Close();
-           //
-           // }
-=======
+
+            
+
+            // using (StreamReader file = new StreamReader(fileName1))
+            // {
+            //
+            //     string ln;
+            //     while ((ln = file.ReadLine()) != null)
+            //     {
+            //
+            //         listBox1.Items.Add(ln);
+            //
+            //     }
+            //     file.Close();
+            //
+            // }
+
             //using (StreamReader file = new StreamReader(fileName1))
             //{
             //    string[] words = file.ReadToEnd().Split(' ');
@@ -106,7 +125,6 @@ namespace Compiler_Design_Project
 
 
             //}
->>>>>>> Stashed changes
         }
     }
 }
