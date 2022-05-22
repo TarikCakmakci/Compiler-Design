@@ -77,9 +77,9 @@ namespace Compiler_Design_Project
                         {
                             listBox1.Items.Add((i + 1) + ".kelime sayı ile başlayamaz");
 
-                        }
-                       
+                        }     
                     }
+
                     for (int z = 0; z < prgDilineAitKelimeler.Length; z++)
                     {
                         if (words[i] == degiskenTipleri[k])
@@ -90,6 +90,7 @@ namespace Compiler_Design_Project
                             }
                         }
                     }
+                    
                    
                 }
                 for (int z = 0; z < operatorler.Length; z++)
@@ -101,6 +102,40 @@ namespace Compiler_Design_Project
                   
                 }
 
+            }
+            //işlem operatörler
+            for (int i = 0; i < words.Length; i++)
+            {
+                for (int k = 0; k < degiskenTipleri.Length; k++)
+                {
+                    for (int z = 0; z < operatorler.Length; z++)
+                    {
+                        for (int p = 0; p < prgDilineAitKelimeler.Length; p++)
+                        {
+                            if (words[i]==degiskenTipleri[0])
+                            {
+                                if (regex.IsMatch(words[i + 1].Substring(0, 1)) == false && words[i + 1] != prgDilineAitKelimeler[p])
+                                {
+                                    if (words[i+2] == operatorler[0])
+                                    {
+                                        if (regex.IsMatch(words[i + 3])== true)
+                                        {
+                                            int sayi = Convert.ToInt32(words[i + 3]);
+                                            listBox1.Items.Add(i + ". satırda "+words[i+1]+" adlı değişkene " + words[i + 3] + " değeri atandı. Atanan değer :" + sayi);
+                                            break;
+                                            
+
+                                        }
+                                    }
+                                }
+                            }
+                            break;
+                        }
+                        break;
+                    }
+                    break;
+                }
+               
             }
 
             
