@@ -114,7 +114,7 @@ namespace Compiler_Design_Project
                         {
                             if (words[i]==degiskenTipleri[0])
                             {
-                                if (regex.IsMatch(words[i + 1].Substring(0, 1)) == false && words[i + 1] != prgDilineAitKelimeler[p])
+                                if (regex.IsMatch(words[i + 1].Substring(0, 1)) == true && words[i + 1] == prgDilineAitKelimeler[p])
                                 {
                                     if (words[i+2] == operatorler[0])
                                     {
