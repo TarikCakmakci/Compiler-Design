@@ -57,6 +57,7 @@ namespace Compiler_Design_Project
             string[] words = s.Split(' ','\n');
             string[] degiskenTipleri = { "int", "double", "boolean" };
             string[] operatorler = { "=", "(", ")" ,"+","-","*"};
+            string[] prgDilineAitKelimeler = { "for", "if","else", "while", "switch", "case", "try", "catch","int","float","double","var","char" };
             foreach (string word in words)
             {
                 
@@ -79,6 +80,16 @@ namespace Compiler_Design_Project
                         }
                        
                     }
+                    for (int z = 0; z < prgDilineAitKelimeler.Length; z++)
+                    {
+                        if (words[i] == degiskenTipleri[k])
+                        {
+                            if (words[i + 1] == prgDilineAitKelimeler[z])
+                            {
+                                listBox1.Items.Add((i+1)+". satırda Programlama diline ait kelimeler değişken ismi olamaz");
+                            }
+                        }
+                    }
                    
                 }
                 for (int z = 0; z < operatorler.Length; z++)
@@ -94,37 +105,7 @@ namespace Compiler_Design_Project
 
             
 
-            // using (StreamReader file = new StreamReader(fileName1))
-            // {
-            //
-            //     string ln;
-            //     while ((ln = file.ReadLine()) != null)
-            //     {
-            //
-            //         listBox1.Items.Add(ln);
-            //
-            //     }
-            //     file.Close();
-            //
-            // }
-
-            //using (StreamReader file = new StreamReader(fileName1))
-            //{
-            //    string[] words = file.ReadToEnd().Split(' ');
-            //    string ln;
-            //    while ((ln = file.ReadLine()) != null)
-            //    {
-            //        if (ln.ToString() == "int")
-            //        {
-            //            listBox1.Items.Add("int bulundu");
-            //        }
-            //        listBox1.Items.Add(ln.Trim());
-
-            //    }
-            //    file.Close();
-
-
-            //}
+           
         }
     }
 }
