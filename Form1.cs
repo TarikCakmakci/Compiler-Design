@@ -57,6 +57,7 @@ namespace Compiler_Design_Project
             string[] words = s.Split(' ','\n');
             string[] degiskenTipleri = { "int", "double", "boolean" };
             string[] operatorler = { "=", "(", ")" ,"+","-","*"};
+            string toplama = "+";
             string[] prgDilineAitKelimeler = { "for", "if","else", "while", "switch", "case", "try", "catch","int","float","double","var","char" };
             foreach (string word in words)
             {
@@ -103,6 +104,7 @@ namespace Compiler_Design_Project
                 }
 
             }
+            int sayi1;
             //işlem operatörler
             for (int i = 0; i < words.Length; i++)
             {
@@ -114,20 +116,30 @@ namespace Compiler_Design_Project
                         {
                             if (words[i]==degiskenTipleri[0])
                             {
-                                if (regex.IsMatch(words[i + 1].Substring(0, 1)) == true && words[i + 1] == prgDilineAitKelimeler[p])
-                                {
-                                    if (words[i+2] == operatorler[0])
-                                    {
-                                        if (regex.IsMatch(words[i + 3])== true)
-                                        {
-                                            int sayi = Convert.ToInt32(words[i + 3]);
-                                            listBox1.Items.Add(i + ". satırda "+words[i+1]+" adlı değişkene " + words[i + 3] + " değeri atandı. Atanan değer :" + sayi);
-                                            break;
-                                            
 
+                                if (regex.IsMatch(words[i + 1].Substring(0, 1)) == false)
+                                {
+                                    if (words[i+1] != prgDilineAitKelimeler[p])
+                                    {
+                                        
+                                        if (words[i + 2] == operatorler[0])
+                                        {
+                                            
+                                            if (regex.IsMatch(words[i + 3]) == true)
+                                            {
+                                                
+                                                sayi1 = Convert.ToInt32(words[i + 3]);
+                                                listBox1.Items.Add(i + ". satırda " + words[i + 1] + " adlı değişkene " + words[i + 3] + " değeri atandı. Atanan değer: " + sayi1);
+                                                break;
+                                            }
                                         }
                                     }
+                                    else
+                                    {
+                                        break;
+                                    }
                                 }
+                                
                             }
                             break;
                         }
@@ -135,8 +147,58 @@ namespace Compiler_Design_Project
                     }
                     break;
                 }
+            }
+            int sayi3, sayi4=0;
+            //dört işlem yapma
+            for (int i = 0; i < words.Length; i++)
+            {
+                try
+                {
+                    if (words[i] == "+")
+                    {
+                       
+                        listBox1.Items.Add("toplama işlemi bulundu.");
+                        sayi3 = Convert.ToInt32(words[i - 1]);
+                        sayi4 = Convert.ToInt32(words[i + 1]);
+                        int toplam = sayi3 + sayi4;
+                        listBox1.Items.Add("toplam sonucu = " + toplam);
+                    }
+                    if (words[i] == "-")
+                    {
+
+                        listBox1.Items.Add("çıkarma işlemi bulundu.");
+                        sayi3 = Convert.ToInt32(words[i - 1]);
+                        sayi4 = Convert.ToInt32(words[i + 1]);
+                        int cikan = sayi3 - sayi4;
+                        listBox1.Items.Add("çıkarma sonucu = " + cikan);
+                    }
+                    if (words[i] == "/")
+                    {
+
+                        listBox1.Items.Add("bölme işlemi bulundu.");
+                        sayi3 = Convert.ToInt32(words[i - 1]);
+                        sayi4 = Convert.ToInt32(words[i + 1]);
+                        int bolum = sayi3 / sayi4;
+                        listBox1.Items.Add("bölümden kalan sonuç = " + bolum);
+                    }
+                    if (words[i] == "*")
+                    {
+
+                        listBox1.Items.Add("çarpma işlemi bulundu.");
+                        sayi3 = Convert.ToInt32(words[i - 1]);
+                        sayi4 = Convert.ToInt32(words[i + 1]);
+                        int carpim = sayi3 * sayi4;
+                        listBox1.Items.Add("çarpım sonucu = " + carpim);
+                    }
+                }
+                catch(Exception E)
+                {
+                    listBox1.Items.Add(E.Message);
+                }
                
             }
+            
+           
 
             
 
