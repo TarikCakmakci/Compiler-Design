@@ -1,4 +1,4 @@
-int x = 55
-int y = 15
-int z = x - y
+int x = -55
+int y = 10
+int z = y * x
 print(z)
