@@ -149,76 +149,164 @@ namespace Compiler_Design_Project
                     break;
                 }
             }
-            int sayi3, sayi4=0;
-            double sayi5, sayi6;
-            //dört işlem yapma
+            //print işlemine işlem yapma
             for (int i = 0; i < words.Length; i++)
             {
                 try
                 {
-                    if (words[i] == "+")
+                    if (words[i] == "print")
                     {
-                       
-                        listBox1.Items.Add("toplama işlemi bulundu.");
-                        sayi3 = Convert.ToInt32(words[3]);
-                        sayi4 = Convert.ToInt32(words[7]);
-                        int toplam = sayi3 + sayi4;
-                        listBox1.Items.Add("toplam sonucu = " + toplam);
-                    }
-                    if (words[i] == "-")
-                    {
+                        listBox1.Items.Add("yazdırma işlemi işlemi bulundu.");
+                        int sayi3, sayi4 = 0;
+                        double sayi5, sayi6;
+                        //dört işlem yapma
+                        for (int k = 0; k < words.Length; k++)
+                        {
+                            try
+                            {
+                                if (words[k] == "+")
+                                {
 
-                        listBox1.Items.Add("çıkarma işlemi bulundu.");
-                        sayi3 = Convert.ToInt32(words[3]);
-                        sayi4 = Convert.ToInt32(words[7]);
-                        if (words[11]==words[1])
-                        {
-                            int cikan = sayi3 - sayi4;
-                            listBox1.Items.Add("çıkarma sonucu = " + cikan);
-                        }
-                        else if (words[11] == words[5])
-                        {
-                            int cikan = sayi4 - sayi3;
-                            listBox1.Items.Add("çıkarma sonucu = " + cikan);
-                        }
-                    }
-                    if (words[i] == "/")
-                    {
-                        listBox1.Items.Add("Bölme işlemi bulundu.");
-                        sayi5 = Convert.ToDouble(words[3]);
-                        sayi6 = Convert.ToDouble(words[7]);
-                        if (words[11] == words[1])
-                        {
-                            double bolum = sayi5 / sayi6;
-                            listBox1.Items.Add("Bölme sonucu = " + bolum);
-                        }
-                        else if (words[11] == words[5])
-                        {
-                            double bolum = sayi6 / sayi5;
-                            listBox1.Items.Add("Bölme sonucu ="+ bolum);
-                        }
-                        //listBox1.Items.Add("bölme işlemi bulundu.");
-                        //sayi5 = Convert.ToDouble(words[i - 1]);
-                        //sayi6 = Convert.ToDouble(words[i + 1]);
-                        //double bolum = sayi5 / sayi6;
-                        //listBox1.Items.Add("bölümden kalan sonuç = " + bolum);
-                    }
-                    if (words[i] == "*")
-                    {
+                                    listBox1.Items.Add("toplama işlemi bulundu.");
+                                    sayi3 = Convert.ToInt32(words[3]);
+                                    sayi4 = Convert.ToInt32(words[7]);
+                                    int toplam = sayi3 + sayi4;
+                                    listBox1.Items.Add("toplam sonucu = " + toplam);
+                                }
+                                if (words[k] == "-")
+                                {
 
-                        listBox1.Items.Add("Çarpma işlemi bulundu.");
-                        sayi3 = Convert.ToInt32(words[3]);
-                        sayi4 = Convert.ToInt32(words[7]);
-                        int carpim = sayi3 * sayi4;
-                        listBox1.Items.Add("Çarpım sonucu = " + carpim);
+                                    listBox1.Items.Add("çıkarma işlemi bulundu.");
+                                    sayi3 = Convert.ToInt32(words[3]);
+                                    sayi4 = Convert.ToInt32(words[7]);
+                                    if (words[11] == words[1])
+                                    {
+                                        int cikan = sayi3 - sayi4;
+                                        listBox1.Items.Add("çıkarma sonucu = " + cikan);
+                                    }
+                                    else if (words[11] == words[5])
+                                    {
+                                        int cikan = sayi4 - sayi3;
+                                        listBox1.Items.Add("çıkarma sonucu = " + cikan);
+                                    }
+                                }
+                                if (words[k] == "/")
+                                {
+                                    listBox1.Items.Add("Bölme işlemi bulundu.");
+                                    sayi5 = Convert.ToDouble(words[3]);
+                                    sayi6 = Convert.ToDouble(words[7]);
+                                    if (words[11] == words[1])
+                                    {
+                                        double bolum = sayi5 / sayi6;
+                                        listBox1.Items.Add("Bölme sonucu = " + bolum);
+                                    }
+                                    else if (words[11] == words[5])
+                                    {
+                                        double bolum = sayi6 / sayi5;
+                                        listBox1.Items.Add("Bölme sonucu =" + bolum);
+                                    }
+                                    //listBox1.Items.Add("bölme işlemi bulundu.");
+                                    //sayi5 = Convert.ToDouble(words[i - 1]);
+                                    //sayi6 = Convert.ToDouble(words[i + 1]);
+                                    //double bolum = sayi5 / sayi6;
+                                    //listBox1.Items.Add("bölümden kalan sonuç = " + bolum);
+                                }
+                                if (words[k] == "*")
+                                {
+
+                                    listBox1.Items.Add("Çarpma işlemi bulundu.");
+                                    sayi3 = Convert.ToInt32(words[3]);
+                                    sayi4 = Convert.ToInt32(words[7]);
+                                    int carpim = sayi3 * sayi4;
+                                    listBox1.Items.Add("Çarpım sonucu = " + carpim);
+                                }
+                            }
+                            catch (Exception E)
+                            {
+                                listBox1.Items.Add(E.Message);
+                            }
+
+                        }
                     }
+
                 }
-                catch(Exception E)
+                catch (Exception E)
                 {
-                    listBox1.Items.Add(E.Message);
+                    listBox1.Items.Add("Yazdırma işlemi bulunamadı. Program sonlandırıldı.");
                 }
-               
+
             }
+             //int sayi3, sayi4=0;
+            //double sayi5, sayi6;
+            ////dört işlem yapma
+            //for (int i = 0; i < words.Length; i++)
+            //{
+            //    try
+            //    {
+            //        if (words[i] == "+")
+            //        {
+                       
+            //            listBox1.Items.Add("toplama işlemi bulundu.");
+            //            sayi3 = Convert.ToInt32(words[3]);
+            //            sayi4 = Convert.ToInt32(words[7]);
+            //            int toplam = sayi3 + sayi4;
+            //            listBox1.Items.Add("toplam sonucu = " + toplam);
+            //        }
+            //        if (words[i] == "-")
+            //        {
+
+            //            listBox1.Items.Add("çıkarma işlemi bulundu.");
+            //            sayi3 = Convert.ToInt32(words[3]);
+            //            sayi4 = Convert.ToInt32(words[7]);
+            //            if (words[11]==words[1])
+            //            {
+            //                int cikan = sayi3 - sayi4;
+            //                listBox1.Items.Add("çıkarma sonucu = " + cikan);
+            //            }
+            //            else if (words[11] == words[5])
+            //            {
+            //                int cikan = sayi4 - sayi3;
+            //                listBox1.Items.Add("çıkarma sonucu = " + cikan);
+            //            }
+            //        }
+            //        if (words[i] == "/")
+            //        {
+            //            listBox1.Items.Add("Bölme işlemi bulundu.");
+            //            sayi5 = Convert.ToDouble(words[3]);
+            //            sayi6 = Convert.ToDouble(words[7]);
+            //            if (words[11] == words[1])
+            //            {
+            //                double bolum = sayi5 / sayi6;
+            //                listBox1.Items.Add("Bölme sonucu = " + bolum);
+            //            }
+            //            else if (words[11] == words[5])
+            //            {
+            //                double bolum = sayi6 / sayi5;
+            //                listBox1.Items.Add("Bölme sonucu ="+ bolum);
+            //            }
+            //            //listBox1.Items.Add("bölme işlemi bulundu.");
+            //            //sayi5 = Convert.ToDouble(words[i - 1]);
+            //            //sayi6 = Convert.ToDouble(words[i + 1]);
+            //            //double bolum = sayi5 / sayi6;
+            //            //listBox1.Items.Add("bölümden kalan sonuç = " + bolum);
+            //        }
+            //        if (words[i] == "*")
+            //        {
+
+            //            listBox1.Items.Add("Çarpma işlemi bulundu.");
+            //            sayi3 = Convert.ToInt32(words[3]);
+            //            sayi4 = Convert.ToInt32(words[7]);
+            //            int carpim = sayi3 * sayi4;
+            //            listBox1.Items.Add("Çarpım sonucu = " + carpim);
+            //        }
+            //    }
+            //    catch(Exception E)
+            //    {
+            //        listBox1.Items.Add(E.Message);
+            //    }
+               
+            //}
+           
             
            
 
