@@ -2,7 +2,6 @@ C:\Users\Tarık\source\repos\Compiler-Design-Project\Compiler-Design-Project\bin
 C:\Users\Tarık\source\repos\Compiler-Design-Project\Compiler-Design-Project\bin\Debug\Compiler-Design-Project.exe
 C:\Users\Tarık\source\repos\Compiler-Design-Project\Compiler-Design-Project\bin\Debug\Compiler-Design-Project.pdb
 C:\Users\Tarık\source\repos\Compiler-Design-Project\Compiler-Design-Project\obj\Debug\Compiler-Design-Project.csproj.AssemblyReference.cache
-C:\Users\Tarık\source\repos\Compiler-Design-Project\Compiler-Design-Project\obj\Debug\Compiler_Design_Project.Form1.resources
 C:\Users\Tarık\source\repos\Compiler-Design-Project\Compiler-Design-Project\obj\Debug\Compiler_Design_Project.Properties.Resources.resources
 C:\Users\Tarık\source\repos\Compiler-Design-Project\Compiler-Design-Project\obj\Debug\Compiler-Design-Project.csproj.GenerateResource.cache
 C:\Users\Tarık\source\repos\Compiler-Design-Project\Compiler-Design-Project\obj\Debug\Compiler-Design-Project.csproj.CoreCompileInputs.cache
@@ -18,3 +17,4 @@ C:\Users\Onur\OneDrive\Belgeler\GitHub\Compiler-Design\obj\Debug\Compiler-Design
 C:\Users\Onur\OneDrive\Belgeler\GitHub\Compiler-Design\bin\Debug\Compiler-Design-Project.exe.config
 C:\Users\Onur\OneDrive\Belgeler\GitHub\Compiler-Design\bin\Debug\Compiler-Design-Project.exe
 C:\Users\Onur\OneDrive\Belgeler\GitHub\Compiler-Design\bin\Debug\Compiler-Design-Project.pdb
+C:\Users\Tarık\source\repos\Compiler-Design-Project\Compiler-Design-Project\obj\Debug\Compiler_Design_Project.AnaFormClass.resources
